@@ -4,14 +4,16 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    # Real news list with links
+    
     jobs = [
-        {"title": "HCL Graduate Trainee", "loc": "Chennai", "link": "#"},
-        {"title": "ZOHO Software Engineer", "loc": "Tenkasi", "link": "#"},
-        {"title": "TCS Smart Hiring 2026", "loc": "Remote", "link": "#"}
+        
+    {"title": "HCL Graduate Trainee", "loc": "Chennai", "link": "https://www.hcltech.com/careers/campus-hiring"},  
+    {"title": "ZOHO Software Engineer", "loc": "Tenkasi", "link": "https://www.zoho.com/careers/"},
+    {"title": "TCS Smart Hiring 2026", "loc": "Remote", "link": "https://www.tcs.com/careers/india/tcs-smart-hiring-program"}
+
     ]
     
-    # Professional UI Design
+  
     html = """
     <html>
     <body style="font-family: 'Segoe UI', sans-serif; background-color: #eef2f7; text-align: center; padding: 50px;">
