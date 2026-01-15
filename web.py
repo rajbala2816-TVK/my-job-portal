@@ -2,57 +2,45 @@ from flask import Flask
 
 app = Flask(__name__)
 
+
 @app.route('/')
 def home():
     sections = [
-        "Home Page", "Doubt Clearing", 
-        "Discussion Forum", "Project Ideas", 
-        "Jobs & Internships", "College News", 
-        "Articles", "Contact Us"
+        ("Home Page", "/"), ("Doubt Clearing", "/work"), 
+        ("Discussion Forum", "/work"), ("Project Ideas", "/work"), 
+        ("Jobs & Internships", "/jobs"), ("College News", "/work"), 
+        ("Articles", "/work"), ("Contact Us", "/work")
     ]
     
     html = """
     <html>
     <head>
-        <title>Muthuraj College Portal</title>
+        <title>College Portal</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>
-            body { font-family: 'Segoe UI', sans-serif; background: #f0f2f5; text-align: center; padding: 20px; margin: 0; }
-            h1 { color: #1a73e8; margin-top: 20px; font-size: 24px; }
-            p { color: #5f6368; margin-bottom: 25px; }
-            .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; max-width: 500px; margin: 0 auto; }
-            .box { 
-                background: #1e3c72; 
-                color: white; 
-                padding: 40px 10px; 
-                border-radius: 15px; 
-                text-decoration: none; 
-                font-weight: 600; 
-                font-size: 14px; 
-                box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                transition: transform 0.2s;
-            }
-            .box:active { transform: scale(0.95); background: #2a5298; }
+            body { font-family: sans-serif; background: #f0f2f5; text-align: center; padding: 20px; }
+            .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+            .box { background: #1e3c72; color: white; padding: 40px 10px; border-radius: 15px; text-decoration: none; font-weight: bold; }
         </style>
     </head>
     <body>
-        <h1>College Student Portal</h1>
-        <p>Your Academic Dashboard</p>
+        <h1>College Portal</h1>
         <div class="grid">
     """
-    
-    for item in sections:
-        html += f'<a href="#" class="box">{item}</a>'
-        
-    html += """
-        </div>
-    </body>
-    </html>
-    """
+    for name, link in sections:
+        html += f'<a href="{link}" class="box">{name}</a>'
+    html += "</div></body></html>"
     return html
+
+
+@app.route('/jobs')
+def jobs():
+    return "<h2>Jobs Page Coming Soon!</h2><a href='/'>Back to Home</a>"
+
+
+@app.route('/work')
+def work():
+    return "<h2>This section is under development!</h2><a href='/'>Back to Home</a>"
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=10000)
