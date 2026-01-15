@@ -4,12 +4,12 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-   
+    # We are using the 8 sections we planned for the College Portal
     sections = [
-        "முகப்புப் பக்கம் (Home)", "டவுட் கிளியரிங் (Doubt Clearing)", 
-        "டிஸ்கஷன் ஃபோரம் (Discussion)", "புராஜெக்ட் ஐடியாஸ் (Projects)", 
-        "வேலைவாய்ப்பு (Jobs)", "காலேஜ் நியூஸ் (College News)", 
-        "ஆர்டிகிள்ஸ் (Articles)", "தொடர்பு (Contact)"
+        "Home Page", "Doubt Clearing", 
+        "Discussion Forum", "Project Ideas", 
+        "Jobs & Internships", "College News", 
+        "Articles", "Contact Us"
     ]
     
     html = """
@@ -18,18 +18,22 @@ def home():
         <title>Muthuraj College Portal</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>
-            body { font-family: Arial; background: #f4f4f4; text-align: center; padding: 20px; }
-            .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-top: 20px; }
-            .box { background: #007bff; color: white; padding: 30px 10px; border-radius: 10px; text-decoration: none; font-weight: bold; font-size: 14px; }
-            h1 { color: #333; }
+            body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #eef2f3; text-align: center; padding: 20px; }
+            .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-top: 25px; }
+            .box { background: #2c3e50; color: white; padding: 35px 10px; border-radius: 12px; text-decoration: none; font-weight: bold; font-size: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+            .box:active { background: #1a252f; transform: scale(0.98); }
+            h1 { color: #2c3e50; margin-bottom: 5px; }
+            p { color: #7f8c8d; margin-top: 0; }
         </style>
     </head>
     <body>
-        <h1>Muthuraj College Portal</h1>
+        <h1>College Portal</h1>
+        <p>Welcome to Student Dashboard</p>
         <div class="grid">
     """
     
     for item in sections:
+        # Each box links to a placeholder for now
         html += f'<a href="#" class="box">{item}</a>'
         
     html += """
