@@ -21,9 +21,8 @@ def home():
             h1 { color: #1a73e8; margin-top: 20px; font-size: 24px; }
             p { color: #5f6368; margin-bottom: 25px; }
             .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; max-width: 500px; margin: 0 auto; }
-            /* இங்க தான் கலர் மாத்தியிருக்கேன் - Royal Blue & Gradient */
             .box { 
-                background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); 
+                background: #1e3c72; 
                 color: white; 
                 padding: 40px 10px; 
                 border-radius: 15px; 
@@ -36,7 +35,7 @@ def home():
                 justify-content: center;
                 transition: transform 0.2s;
             }
-            .box:active { transform: scale(0.95); opacity: 0.9; }
+            .box:active { transform: scale(0.95); background: #2a5298; }
         </style>
     </head>
     <body>
@@ -57,4 +56,3 @@ def home():
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=10000)
-
