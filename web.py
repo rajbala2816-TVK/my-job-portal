@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    # We are using the 8 sections we planned for the College Portal
+    
     sections = [
         "Home Page", "Doubt Clearing", 
         "Discussion Forum", "Project Ideas", 
@@ -33,7 +33,7 @@ def home():
     """
     
     for item in sections:
-        # Each box links to a placeholder for now
+        
         html += f'<a href="#" class="box">{item}</a>'
         
     html += """
@@ -45,3 +45,4 @@ def home():
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=10000)
+
